@@ -1,16 +1,15 @@
 import os
-numberOfHosts = 1 #Enter the number of hosts would you like to ping.
-Hosts = [] #Enter your hosts in the list.
+hosts = [""] #Enter your hosts in the list.
 print("Script for checking that servers are working.")
 print("Author: Julian Korgol.")
 print("https://juliankorgol.com/")
 n = 0
+numberOfHosts = len(hosts)
 while n < numberOfHosts:
-    answer = os.system("ping " +Hosts[n])
+    answer = os.system("ping " +hosts[n])
     if answer == 0:
-        print(Hosts[n] + "\033[92m" + " It's working!")
-        n += 1
+        print(hosts[n] + "\033[92m" + " It's working!")
     else:
-        print(Hosts[n] + "\033[91m" + " It's down!")
-        n += 1
+        print(hosts[n] + "\033[91m" + " It's down!")
+    n += 1
     print("\033[0m")
